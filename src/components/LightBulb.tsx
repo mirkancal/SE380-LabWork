@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, PanResponder, StyleSheet } from 'react-native';
 
 interface IProps {
-	isLit: boolean;
-	colorProp: string;
+	isLit?: boolean;
+	colorProp?: string;
 }
 export default class LightBulb extends Component<IProps> {
 	render() {

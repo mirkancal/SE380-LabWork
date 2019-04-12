@@ -2,32 +2,28 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import LightBulb from './LightBulb';
 
-interface IState {
-	isLightOn: boolean;
-}
+interface IState {}
 
-interface IProps {}
+interface IProps {
+	isLightOn: boolean;
+	classRoomButton: any;
+}
 
 export default class LightButton extends Component<IProps, IState> {
 	constructor(props: IProps) {
 		super(props);
-		this.state = {
-			isLightOn: false
-		};
 	}
 
 	toggleBulb() {
-		this.state.isLightOn ? this.setState({ isLightOn: false }) : this.setState({ isLightOn: true });
-		styles.red.backgroundColor = 'green';
+		this.props.isLightOn ? (styles.red.backgroundColor = 'green') : null;
 	}
 
 	render() {
 		return (
 			<View style={styles.red}>
-				<LightBulb isLit={this.state.isLightOn} />
 				<Button
-					title={`Turn light ${this.state.isLightOn ? 'OFF' : 'ON'}`}
-					onPress={this.toggleBulb.bind(this)}
+					title={`Turn light ${this.props.isLightOn ? 'OFF' : 'ON'}`}
+					onPress={this.props.classRoomButton}
 				/>
 			</View>
 		);

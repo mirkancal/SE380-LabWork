@@ -12,13 +12,14 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import LightBulb from './src/components/LightBulb';
 import LightButton from './src/components/LightButton';
+import ClassRoom from './src/components/ClassRoom';
 
 interface Props {}
 export default class App extends Component<Props> {
 	render() {
 		return (
 			<View style={styles.container}>
-				<LightButton />
+				<ClassRoom />
 			</View>
 		);
 	}
