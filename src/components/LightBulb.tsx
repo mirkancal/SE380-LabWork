@@ -8,7 +8,19 @@ interface IProps {
 export default class LightBulb extends Component<IProps> {
 	render() {
 		return (
-			<View style={this.props.isLit ? styles.green : styles.red}>
+			<View
+				style={
+					this.props.isLit ? this.props.colorProp === 'green' ? (
+						styles.green
+					) : this.props.colorProp === 'red' ? (
+						styles.red
+					) : (
+						styles.blue
+					) : (
+						styles.green
+					)
+				}
+			>
 				<Text>{this.props.isLit ? 'ON' : 'OFF'}</Text>
 			</View>
 		);
@@ -28,6 +40,10 @@ const styles = StyleSheet.create({
 	},
 	red: {
 		backgroundColor: 'red',
+		padding: 5
+	},
+	blue: {
+		backgroundColor: 'blue',
 		padding: 5
 	}
 });
